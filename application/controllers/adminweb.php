@@ -126,7 +126,6 @@ class Adminweb extends CI_Controller {
 		$uname = $this->input->post('username');
 		$pass = md5($this->input->post('pass'));
 		$div = ($this->input->post('divisi')=='') ? '' : $this->input->post('divisi') ;
-		//echo $uname . $pass;
 		$query = $this->db->get_where('tb_user',array('username' => $uname,
 											'pass' =>$pass ));
 		if($query->num_rows() > 0){
@@ -140,7 +139,9 @@ class Adminweb extends CI_Controller {
 								  'level' =>$row->level,
 								  'id' =>$row->Id,
 								  'divisi'=> $div);
-					$this->session->set_userdata($sess);
+					$_SESSION['level'] = $row->level;
+					// $this->session->set_userdata($sess);
+
 					redirect('adashboard');
 					}
 				}

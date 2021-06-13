@@ -140,6 +140,6 @@
 	<?php $pos++; }?>
 </div>
 <div class="row">
-	<?php echo $halaman ?>
+	<?php echo $halaman ; }?>
 </div>
 </div> 

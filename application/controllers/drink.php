@@ -18,19 +18,19 @@ class Drink extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	function __construct(){
-		parent::__construct();
-		$this->load->model('model_drink');
-		$this->load->model('model_security');
+	// function __construct(){
+	// 	parent::__construct();
+	// 	$this->load->model('model_drink');
+	// 	$this->load->model('model_security');
 		
-	}
+	// }
 
 
 	public function index($kd=NULL)
 	{
 		// $this->load->view('welcome_message');
 		
-		$this->Model_security->securecustomer();
+		// $this->Model_security->securecustomer();
 		$data['datadb']= $this->db->get('tb_perusahaan');
 		
 		//atur halaman pagination
@@ -54,6 +54,7 @@ class Drink extends CI_Controller {
 		$atur['num_tag_close'] = '</li>';
 		
 		//mengambil data dari database dan model
+		$this->load->model('model_drink');
 		$jumlah = $this->model_drink->jumlah();
 		$atur['base_url'] =base_url().'drink/index';
 		$atur['total_rows'] = $jumlah;

@@ -22,8 +22,8 @@ class Pesanan extends CI_Controller {
 	{
 		$sts = $this->session->userdata('sts');
 		// $this->load->view('welcome_message');
-		$this->load->model('Model_security');
-		$this->Model_security->securecustomer();
+		// $this->load->model('Model_security');
+		// $this->Model_security->securecustomer();
 		$data['datadb']= $this->db->get('tb_perusahaan');
 		$nota = $this->session->userdata('nota');
 		if($sts == ''){

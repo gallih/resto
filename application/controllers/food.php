@@ -18,14 +18,14 @@ class Food extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	function __construct(){
-			parent::__construct();
-			$this->load->model('model_food');
-			$this->load->model('Model_security');
-	}
+	// function __construct(){
+	// 		parent::__construct();
+	// 		$this->load->model('model_food');
+	// 		$this->load->model('Model_security');
+	// }
 	public function index($id =NULL)
 	{
-		$this->Model_security->securecustomer();
+		// $this->Model_security->securecustomer();
 		$data['datadb']= $this->db->get('tb_perusahaan');
 
 		//config halaman pagination
@@ -48,7 +48,9 @@ class Food extends CI_Controller {
 		$config['num_tag_open'] = '<li>';
 		$config['num_tag_close'] = '</li>';
 		
+
 		//mengambil data dari database dan model
+		$this->load->model('model_food');
 		$jumlah = $this->model_food->jumlah();
 		$config['base_url'] =base_url().'food/index';
 		$config['total_rows'] = $jumlah;
