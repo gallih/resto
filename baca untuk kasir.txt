@@ -1,0 +1,8 @@
+untuk memaksimalkan hasil pencetakan nota pada kasir ,maka tambahkan kata berikut pada google chrome.
+dengan cara : 
+klik kanan shortcut googlechrome yang ada di dekstop >> properties >> pada target tambahkan diakhir kata :  --disable-print-preview
+sehingga akan menjadi
+	("C:\Program Files\Google\Chrome\Application\chrome.exe") --disable-print-preview
+	     ----posisi instalan google chrome---- 					 *tambahkan ini*
+
+	     

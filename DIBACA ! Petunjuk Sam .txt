@@ -1,0 +1,90 @@
++===============================++===============================++===============================++===============================+
+revisi tanggal 18  deadline 1 minggu - 25 februari
+
+USER / CUSTOMER :
+1. ditampilkan nama item di menu pemesanan user [=]
+2. font diskon dirubah[=]
+3. font pagination dirubah [=]
+4. Pada item jagung bakar dan roti bakar
+	- diberikan rasa : pedas ,manis ,asin [=]
+
+TAMPILAN :
+1. Warna Background web mengikuti logo perusahaan
+
+ADMIN ,KASIR ,KOKI:
+1. JUMLAH PEMBELIAN PER ITEM [=]
+	contoh :
+		nasi bungkus :2
+		es teh :2
+2. Bungkus ditambahkan keterangan
+3. Item ditambahkan stok barang[=]
+4. Laporan Harian di buat eksport ke Excel
+5. Tambah kan tombol Closing Penjualan (tutup buku) lalu perhitungan dimulai dari 0 !
+6. Pencarian Nota untuk dicetak [=]
+7. update stok item jika ada transaksi [=]
+8. membedakan jenis item yang ada sachet dan yang tidak ada sachetnya untuk mempengaruhi stok barang ![=]
+9. menampilkan item berdasarkan jumlah stok atau persediaannya [=]
+10. menambahkan rasa dan item_jadi di item >>>>22-02-2016
+
+KET:
+* [=] => selesai
++===============================++===============================++===============================++===============================+
++===============================++===============================++===============================++===============================+
+#pengaturan browser
+	"C:\Program Files\Google\Chrome\Application\chrome.exe" --disable-print-preview 
+	-fullscreen
+	"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-print-preview -kiosk -fullscreen http://localhost/resto/adminweb
++===============================++===============================++===============================++===============================+
+
+
++===============================++===============================++===============================++===============================+
+#menghilangkan shortcut panah desktop
+1. regedit 
+2. buka HKEY_CLASSES_ROOT
+3. Lalu cari Folder lnkfile (LNKFILE tapi dengan huruf kecil) jika tidak ketemu atau susah mencarinya gunakan Ctrl+f kemudian ketik
+   isshortcut lalu Enter.
+4. Ubah nama string value dari IsShortcut menjadi IsShortcuts
+5. restart komputer
++===============================++===============================++===============================++===============================+
+
+
++===============================++===============================++===============================++===============================+
+#target untuk besok 23/02/2016
+
+1. selesaikan hal yang berkaitan dengan stok barang
+	contoh : 
+	 # jika item sachet maka mengurangi stok barang
+	 # jika item bukan saschet maka tidak mengurangi stok barang
+2. harga yang dapat diskon masih belum update di data transaksi kasir ,perbaiki besok !!
+3. Mencari Ekspor ke excel 
+4. Tutup Buku ??
++===============================++===============================++===============================++===============================+
+
++============24-2-2016======++===============================++===============================++===============================+
+TINGGAL PENGATURAN STOK BARANG -- acustomer>pesan [=]
+TUTUP BUKU [=]
+EKSPORT EXCEL
++===============================++===============================++===============================++===============================+
+
+
+
+PRESENTASE SELESAI 90%; >> 22-02-2016 <<
+
+
+
+
+
+
+eksport excel
+
+<?php
+// Fungsi header dengan mengirimkan raw data excel
+header("Content-type: application/vnd-ms-excel");
+ 
+// Mendefinisikan nama file ekspor "hasil-export.xls"
+header("Content-Disposition: attachment; filename=tutorialweb-export.xls");
+ 
+// Tambahkan table
+include 'data.php';
+
+?>
