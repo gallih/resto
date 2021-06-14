@@ -11,7 +11,7 @@
 <?php foreach ($datafood as $baris) {?>
 <div class="col-md-3 col-sm-4 col-xs-6">
 	<div class="panel-heading">
-		<h3 align="center" style="color:#C53E3E"><b><?php echo strtoupper($baris->item) ?></b></h3>
+		<h3 align="center" style="color:#C53E3E"><b><?= strtoupper($baris->item) ?></b></h3>
 	</div>
 	<div class="panel panel-default">
 		<div class="panel-body" style="position:relative">
@@ -25,43 +25,44 @@
       ?>
       <?php if($baris->promo >0) { ?>
       <div> 
-      <img src="<?php echo base_url() ?>asset/images/diskon.png" style="position:absolute;top:-4%;left:-4%" width="22%">
-      <h5 style="position:absolute;left:1%;top:-1%;color:yellow;font-size:14pt;"><b><?php if($baris->promo >0) echo $baris->promo ?>%</b></h5>
+      <img src="<?= base_url() ?>asset/images/diskon.png" style="position:absolute;top:-4%;left:-4%" width="22%">
+      <h5 style="position:absolute;left:1%;top:-1%;color:yellow;font-size:14pt;"><b><?= ($baris->promo >0) ??  $baris->promo ?>%</b></h5>
       </div>
       <?php }?>
-      <div class="promo" style="position:absolute;bottom:35%;left:0;display:<?php if($baris->promo ==0) echo "none"; ?>"> 
+      <div class="promo" style="position:absolute;bottom:35%;left:0;display:<?= ($baris->promo ==0) ?? "none"; ?>"> 
         <div style="background:#373327;padding:1px;color:white;border-radius: 0px 7px 0px 0px;
 ">
-          <h4><b style="text-decoration: line-through;"><?php echo "Rp ".number_format($baris->harga) ?></b></h4>
+          <h4><b style="text-decoration: line-through;"><?= "Rp ".number_format($baris->harga) ?></b></h4>
         </div>
       </div>
        <div class="harga" style="position:absolute;right:0;bottom:35%"> 
         <div style="width:auto;display:block;background:#C53E3E;color:white;border-radius: 7px 0px 0px 0px;">
-        <h3><?php $hrgdiskon=$baris->harga -($baris->harga*$baris->promo/100); echo "Rp ". number_format($hrgdiskon); ?></h3>
+        <h3><?= $hrgdiskon=$baris->harga -($baris->harga*$baris->promo/100);  "Rp ". number_format($hrgdiskon); ?></h3>
         </div>
       </div>
 
       <div>
-			   <img src="<?php echo $alamat ?>" height="200px" width="100%">
+			   <img src="<?= $alamat ?>" height="200px" width="100%">
       </div>
 
-			<p>&nbsp;<?php echo $baris->ket ?></p>
+			<p>&nbsp;<?= $baris->ket ?></p>
 		</div> <!-- tutup body -->
 		<div class="panel-footer" style="background: #fff;">
-			<button type="button" pil = <?php echo $baris->pilihan ?> url="<?php echo base_url() ?>" meja="<?php echo $baris->kd_item ?>" item = "<?php echo $baris->item ?>" id="pesan<?php echo $baris->kd_item ?>" style="background:#373327;color:#fff"  class="btn btn-block" >PESAN <i class='fa fa-check-circle'></i></button>
+			<button type="button" pil = <?= $baris->pilihan ?> url="<?= base_url() ?>" meja="<?= $baris->kd_item ?>" item = "<?= $baris->item ?>" id="pesan<?= $baris->kd_item ?>" style="background:#373327;color:#fff"  class="btn btn-block" >Pilih </button>
 	  </div> <!-- tutup footer -->
 </div> <!-- tutup panel -->
 </div>
 <script type="text/javascript">
 
 $(function(){
-  $('#pesan<?php echo $baris->kd_item ?>').on('click',function(){
+  $('#pesan<?= $baris->kd_item ?>').on('click',function(){
     var kode = $(this).attr('meja');
     var item = $(this).attr('item');
     var pilihan = $(this).attr('pil');
     var sumber  = $(this).attr('url') + '/asset//images//item//'+kode+'.jpg';
     var tidak  = $(this).attr('url') + '//asset//images//item//no-image.jpg';
     var isi;
+
     // MENAMPILKAN GAMBAR DARI JAVASCRIPT
     $.ajax({
       url :sumber,
@@ -112,8 +113,8 @@ $(function(){
         <h4 class="modal-title" id="myModalLabel">Pemesanan Item</h4>
       </div>
       <div class="modal-body">
-        <form id="forme<?php echo $baris->kd_item ?>" >
-        <input type="hidden" name="kd_item" id="kd_item" value="<?php echo $baris->kd_item ?>">
+        <form id="forme<?= $baris->kd_item ?>" >
+        <input type="hidden" name="kd_item" id="kd_item" value="<?= $baris->kd_item ?>">
          <label>Item yang dipesan :</label><br>
          <label class="label" style="background:#333333;color:#fff;display:block;text-align:center;font-size:20pt" name='item'></label>
          <div class="form-group">
@@ -133,7 +134,7 @@ $(function(){
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Batalkan</button>
-        <button url="<?php echo base_url() ?>/acustomer/pemesanan" id="form<?php echo $baris->kd_item ?>" type="submit" style="background:#C53E3E;color:#fff" class="btn">Pesan Sekarang</button>
+        <button url="<?= base_url() ?>/acustomer/pemesanan" id="form<?= $baris->kd_item ?>" type="submit" style="background:#C53E3E;color:#fff" class="btn">Pesan Sekarang</button>
       </div>
         </form>
     </div>
@@ -143,10 +144,10 @@ $(function(){
 <!-- menyimpan ke tabel pemesanan -->
 <script type="text/javascript">
   $(function(){
-    $('#form<?php echo $baris->kd_item ?>').on('click',function(){
+    $('#form<?= $baris->kd_item ?>').on('click',function(e){
         var jml = $('input[name=jml]').val();
         var url = $(this).attr('url');
-        var isidata = $('#forme<?php echo $baris->kd_item ?>').serialize();
+        var isidata = $('#forme<?= $baris->kd_item ?>').serialize();
         if(jml ==0 || jml < 0){
           alert('Masukkan Jumlah ');
         }else{
@@ -166,10 +167,12 @@ $(function(){
             }
           })
         }
+
+        e.preventDefault();
     })
   })
 </script>
 <?php }?>
 </div>
-  <?php echo $halaman ?>
+  <?= $halaman ?>
 </div> <!-- tutup container -->

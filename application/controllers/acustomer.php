@@ -112,26 +112,26 @@ class Acustomer extends CI_Controller {
 		$query = $this->db->get_where('tb_pemesanan',array('nota' => $nota ));
 
 		//mengurangi stok ditabel item
-		if($query->num_rows() > 0){
-			foreach ($query->result() as $baris){
-				$kode = $baris->kd_item;
-				$this->db->where('kd_item',$kode);
-				$qitem = $this->db->get_where('tb_item');
-				foreach ($qitem->result() as $brs) {
-					if($baris->kd_item == $brs->kd_item){
-						if($brs->item_jadi =='Ya'){
-							if($brs->stok >0){
-								//update isi stok
-								$baru['stok'] = $brs->stok - $baris->jml;
-								$baru['sts'] = ($stokbaru <= 0) ? 'Tidak' : $brs->sts ;
-								$this->db->where('kd_item',$kode);
-								$this->db->update('tb_item',$baru);
-							}
-						}
-					}
-				}
-			}
-		}
+		// if($query->num_rows() > 0){
+		// 	foreach ($query->result() as $baris){
+		// 		$kode = $baris->kd_item;
+		// 		$this->db->where('kd_item',$kode);
+		// 		$qitem = $this->db->get_where('tb_item');
+		// 		foreach ($qitem->result() as $brs) {
+		// 			if($baris->kd_item == $brs->kd_item){
+		// 				if($brs->item_jadi =='Ya'){
+		// 					if($brs->stok >0){
+		// 						//update isi stok
+		// 						$baru['stok'] = $brs->stok - $baris->jml;
+		// 						$baru['sts'] = ($stokbaru <= 0) ? 'Tidak' : $brs->sts ;
+		// 						$this->db->where('kd_item',$kode);
+		// 						$this->db->update('tb_item',$baru);
+		// 					}
+		// 				}
+		// 			}
+		// 		}
+		// 	}
+		// }
 		//========================================================================
 
 		//update ke tabel pesan===================================================
@@ -174,7 +174,6 @@ class Acustomer extends CI_Controller {
 	public function simpan(){
 		date_default_timezone_set('Asia/Bangkok');
 
-
 		//membaca ke table meja
 		$kdmeja =$this->input->post('id_meja');
 		$nomeja = $this->db->get_where('tb_meja',array('nm_meja'=>$kdmeja));
@@ -183,6 +182,8 @@ class Acustomer extends CI_Controller {
 		}
 		
 		$nota = 'N'.date('Ymdhms').$this->db->insert_id();
+
+		$this->session->set_userdata('nota', $nota);
 
 		//mengisi ke tabel customer
 		$data['nama'] = $this->input->post('nama');
@@ -234,6 +235,7 @@ class Acustomer extends CI_Controller {
 		//menyimpan ke tabel pemesanan
 		$nota =$this->session->userdata('nota');
 		$kd_item = $this->input->post('kd_item');
+
 		$baca = $this->db->get_where('tb_pemesanan',array('nota' => $nota ,
 														'kd_item'=>$kd_item));
 
@@ -254,7 +256,8 @@ class Acustomer extends CI_Controller {
 			$data['rasa'] = $this->input->post('rasa');
 			$this->db->insert('tb_pemesanan',$data);
 		}
-		echo "ok";
+
+		echo 'ok';
 	}
 
 	public function jumlah(){
@@ -300,26 +303,26 @@ class Acustomer extends CI_Controller {
 		$nota =$this->session->userdata('nota');
 		$query = $this->db->get_where('tb_pemesanan',array('nota' => $nota ));
 		//mengurangi stok ditabel item
-		if($query->num_rows() > 0){
-			foreach ($query->result() as $baris){
-				$kode = $baris->kd_item;
-				$this->db->where('kd_item',$kode);
-				$qitem = $this->db->get_where('tb_item');
-				foreach ($qitem->result() as $brs) {
-					if($baris->kd_item == $brs->kd_item){
-						if($brs->item_jadi =='Ya'){
-							if($brs->stok >0){
-								//update isi stok
-								$baru['stok'] = $brs->stok + $baris->jml;
-								$baru['sts'] = ($stokbaru > 0) ? 'ada' : $brs->sts ;
-								$this->db->where('kd_item',$kode);
-								$this->db->update('tb_item',$baru);
-							}
-						}
-					}
-				}
-			}
-		}
+		// if($query->num_rows() > 0){
+		// 	foreach ($query->result() as $baris){
+		// 		$kode = $baris->kd_item;
+		// 		$this->db->where('kd_item',$kode);
+		// 		$qitem = $this->db->get_where('tb_item');
+		// 		foreach ($qitem->result() as $brs) {
+		// 			if($baris->kd_item == $brs->kd_item){
+		// 				if($brs->item_jadi =='Ya'){
+		// 					if($brs->stok >0){
+		// 						//update isi stok
+		// 						$baru['stok'] = $brs->stok + $baris->jml;
+		// 						$baru['sts'] = ($stokbaru > 0) ? 'ada' : $brs->sts ;
+		// 						$this->db->where('kd_item',$kode);
+		// 						$this->db->update('tb_item',$baru);
+		// 					}
+		// 				}
+		// 			}
+		// 		}
+		// 	}
+		// }
 		$id = $this->uri->segment(3);
 		// $this->db->where('nota' ,$nota);
 		// $pms = $this->db->get('tb_pemesanan');

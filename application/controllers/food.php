@@ -25,6 +25,7 @@ class Food extends CI_Controller {
 	// }
 	public function index($id =NULL)
 	{
+
 		// $this->Model_security->securecustomer();
 		$data['datadb']= $this->db->get('tb_perusahaan');
 

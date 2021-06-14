@@ -48,7 +48,7 @@
 							<input required="required" name="nohp" placeholder="Masukkan Nomor HP Anda" type="tel" class="form-control">
 						</div>
 						<div class="form-group">
-							<button type="button" onclick="valmeja()" class="btn" style="background:#2B2B2B;color:#fff">Lihat Menu <i class="fa fa-arrow-right"></i></button>
+							<button type="button" onclick="valmeja()" class="btn" style="background:#2B2B2B;color:#fff">Lihatp Menu <i class="fa fa-arrow-right"></i></button>
 							<button type="button" onclick="javascript:location.reload(true)" class="btn btn-primary"><i class="fa fa-refresh"></i></button>
 						</div>
 					</form>
