@@ -45,9 +45,9 @@
         <div class="tile-stats" style="background:#2C3E50;color:#fff">
             <div class="icon"><i class="fa fa-plus"></i>
             </div>
-            <div class="count">Tambah Item Baru</div>
+            <div class="count">Request Pesanan Baru</div>
             <h3>&nbsp;</h3>
-            <p>Tambah Item</p>
+            <p>Request Pesanan Baru</p>
         </div>
     </div>
     </a>

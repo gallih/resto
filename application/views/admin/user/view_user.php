@@ -17,10 +17,10 @@
     }
 ?>
 <div class="row">
-<div class="col-md-8 col-sm-12 col-xs-12 col-md-offset-2">
+<div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
         <div class="x_title">
-            <h2>User Pengguna Program</h2>
+            <h2>Data User</h2>
             
             <ul class="nav navbar-right panel_toolbox">
                 <li>

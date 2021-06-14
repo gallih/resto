@@ -21,14 +21,14 @@ class Aperusahaan extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
-		$this->Model_security->getsecure();
+		// $this->Model_security->getsecure();
 		// $this->Model_security->hakakses($this->session->userdata('level'));
 	}
 
 	public function index()
 	{
 		// $data['datadb'] = $this->db->get_where('tb_perusahaan',array('sts' => 'A' ));
-		$this->Model_security->getsecure();
+		// $this->Model_security->getsecure();
 		$data['error'] = '';
 		$data['datadb'] = $this->db->get('tb_perusahaan');
 		$this->load->view('admin/perusahaan/view_perusahaan' ,$data);		

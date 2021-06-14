@@ -18,10 +18,10 @@
     }
 ?>
 <div class="row">
-<div class="col-md-8 col-sm-12 col-xs-12">
+<div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
         <div class="x_title">
-            <h2>Pengaturan Identitas Data Resto<small>Atur Data Resto Anda</small></h2>
+            <h2>Data Resto</h2>
 
             <?php if($datadb->num_rows() == 0){ ?>
             <ul class="nav navbar-right panel_toolbox">
@@ -33,7 +33,6 @@
             <div class="clearfix"></div>
         </div>
         <div class="">
-        <p>* <i class="fa fa-pencil"></i> Untuk Mengedit data</p>
             <table id="karyawan" class="table table-striped responsive-utilities jambo_table">
                 <thead>
                     <tr class="headings">

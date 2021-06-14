@@ -21,7 +21,7 @@ class Ameja extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
-		$this->Model_security->getsecure();
+		// $this->Model_security->getsecure();
 		// $this->Model_security->hakakses($this->session->userdata('level'));
 	}
 	

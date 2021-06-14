@@ -91,11 +91,7 @@
     <script type="text/javascript" src="<?php echo base_url() ?>asset/admin/js/bootstrap.file-input.js"></script>
 </head>
 <script type="text/javascript">
-    // $(function(){
-       // Find the right method, call on correct element
-
-        // Launch fullscreen for browsers that support it!
-    // })
+   
      function launchIntoFullscreen(element) {
           if(element.requestFullscreen) {
             element.requestFullscreen();
