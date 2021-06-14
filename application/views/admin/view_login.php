@@ -19,14 +19,13 @@
 <style type="text/css">
     body{
         /*background: #1ABB9C;*/
-        background: #333333;
+        background: #FAFAFA;
     }
     .head{
-        background: #09f;
+        background: #FAFAFA;
     }
     #login{
         
-        box-shadow: 6px 6px 5px #000;
         background: #fff;
         padding: 20px;
         border: 2px solid #ccc;
@@ -34,28 +33,22 @@
 </style>
 
 <div class="">
-        <a class="hiddenanchor" id="toregister"></a>
-        <a class="hiddenanchor" id="tologin"></a>
-        <div id="wrapper">
-            <div id="login" class="animated flipInX">
+        <div id="wrapper" style="margin-top:10%">
+            <div id="login" class="animated fadeInDown">
                 <div class="">
                         <div class="row">
                             <div class="col-md-12" class="head">
-                                <h4 align="center" style="color:#000">ADMINISTRATOR PAGE <i class="fa fa-key"></i></h4>
+                                <h4 align="center" style="color:#000">LOGIN</h4>
                             </div>         
                         </div>               
-                        <div class="row">
-                            <div class="col-md-12">
-                                <img src="<?php echo base_url('asset/images/admin.png')?>" class="img" width="300px" >
-                        </div>
-                        </div>
+
                     <form method="post" action="<?php echo base_url()?>adminweb/masuk">
                         <div class="input-group">
-                            <input name="username" autofocus type="text" size="5" class="form-control" placeholder="Masukkan Nama User" required="" />
+                            <input name="username" autofocus type="text" size="5" class="form-control" placeholder="Username" required="" />
                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
                         </div>
                         <div class="input-group">
-                            <input name="pass" type="password" class="form-control" placeholder="Masukkan Kata Sandi" required="" />
+                            <input name="pass" type="password" class="form-control" placeholder="Password" required="" />
                             <span class="input-group-addon"><i class="fa fa-lock"></i></span>
                         </div>
                         <div>
