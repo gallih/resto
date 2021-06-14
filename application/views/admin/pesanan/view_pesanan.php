@@ -24,19 +24,19 @@
 </style>
 <script type="text/javascript">
 	$(function(){
-		setTimeout('location.reload(true);',10000);
-		$.ajax({
-			url : '<?php echo base_url() ?>apesanan/cekjml',
-			success:function(e){
-				if(e != 0){
-					window.open('<?php echo base_url() ?>apesanan/cetakmakan');
+		// setTimeout('location.reload(true);',10000);
+		// $.ajax({
+		// 	url : '<?php echo base_url() ?>apesanan/cekjml',
+		// 	success:function(e){
+		// 		if(e != 0){
+		// 			window.open('<?php echo base_url() ?>apesanan/cetakmakan');
 					
-				}
-			}
-		})
+		// 		}
+		// 	}
+		// })
 		//window.open('<?php echo base_url() ?>apesanan/cetakmakan');
 		$(document).ready(function(){
-			var cek = '<?php echo base_url() ?>apesanan/cetakmakan';
+			// var cek = '<?php echo base_url() ?>apesanan/cetakmakan';
 			// $.ajax({
 			// 	url: cek,
 			// 	success:function(e){
@@ -149,7 +149,7 @@
 							<tbody>
 								<?php
 									$jml = 0;
-									$det =$this->db->group_by('item')->get_where('q_pesan',array('nota' => $brs->nota ,'sts_item'=>'belum','nm_jns'=>'Makanan'));
+									$det =$this->db->group_by('item')->get_where('q_pesan',array('nota' => $brs->nota ,'sts_item'=>'belum'));
 									foreach ($det->result() as $row) { 
 										
 									?>

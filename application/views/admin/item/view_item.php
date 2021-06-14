@@ -57,7 +57,6 @@
                         <td class=" "><?php echo $no?></td>
                         <td class=" "><?php echo $row->item?></td>
                         <td align="center"><?php echo $row->stok?></td>
-                        <td class=" "><?php echo $row->nm_jns?></td>
                         <td class=" "><?php echo $row->item_jadi?></td>
                         <td class=" "><?php echo $row->rasa?></td>
                         <td align="right"><?php echo "Rp ".$row->harga?></td>

@@ -9,7 +9,7 @@ class Model_apesanan extends CI_Model {
 		return $query = $this->db
 							   ->group_by('nota')
 							   ->order_by('jam','asc')
-							   ->where(array('sts_item'=>'belum','nm_jns'=>$div))
+							   ->where(array('sts_item'=>'belum'))
 							   ->limit($sampai,$dari)
 							   ->get($tabel)
 							   ->result();

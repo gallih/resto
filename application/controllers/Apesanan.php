@@ -159,35 +159,35 @@ class Apesanan extends CI_Controller {
 		redirect('adminweb');
 	}
 	function cekjml(){
-		$data = $this->db->get_where('q_jml_perhari',array('nm_jns' => 'makanan','tgl'=>date('Y-m-d'),'sts'=>'Belum' ));
+		$data = $this->db->get_where('q_jml_perhari',array('tgl'=>date('Y-m-d'),'sts'=>'Belum' ));
         echo $data->num_rows();
         
 	}
 	function cetakmakan()
     {
-        $data = $this->db->get_where('q_jml_perhari',array('nm_jns' => 'makanan','tgl'=>date('Y-m-d'),'sts'=>'Belum' ));
-        if($data->num_rows() >0){
-    	//custom ukuran kertas 
-    	//(P = POTRAIT L=LANDSCAPE ,SATUAN UKURAN ,ARRAY(TINGGI ,LEBAR))
-        $pdf = new FPDF('P','cm',array(20,5.8));
-        $pdf->AddPage();
-        $pdf->SetMargins(0.4,0,0);
-        $pdf->SetFont('Arial','',9);
-        $pdf->Cell(4,0.5,"Pesanan Makanan yang Belum",0,0,'C');
-        $pdf->Ln(0.5);
-        $pdf->Cell(5,0,"-----------------",0,0,'C');
-        $pdf->Ln(0.5);
-        	foreach ($data->result() as $mak ) { 
-        		$pdf->Cell(4,0.5,$mak->item,0,0,'L');
-        		$pdf->Cell(1,0.5,$mak->Sum_jml,0,0,'R');
-        	}
-        // $pdf->AutoPrint(true);
-        $pdf->AddPage();
-        $pdf->Output();
+        // $data = $this->db->get_where('q_jml_perhari',array('tgl'=>date('Y-m-d'),'sts'=>'Belum' ));
+        // if($data->num_rows() >0){
+    	// //custom ukuran kertas 
+    	// //(P = POTRAIT L=LANDSCAPE ,SATUAN UKURAN ,ARRAY(TINGGI ,LEBAR))
+        // $pdf = new FPDF('P','cm',array(20,5.8));
+        // $pdf->AddPage();
+        // $pdf->SetMargins(0.4,0,0);
+        // $pdf->SetFont('Arial','',9);
+        // $pdf->Cell(4,0.5,"Pesanan Makanan yang Belum",0,0,'C');
+        // $pdf->Ln(0.5);
+        // $pdf->Cell(5,0,"-----------------",0,0,'C');
+        // $pdf->Ln(0.5);
+        // 	foreach ($data->result() as $mak ) { 
+        // 		$pdf->Cell(4,0.5,$mak->item,0,0,'L');
+        // 		$pdf->Cell(1,0.5,$mak->Sum_jml,0,0,'R');
+        // 	}
+        // // $pdf->AutoPrint(true);
+        // $pdf->AddPage();
+        // $pdf->Output();
         
-        }else{
-        	echo 0;	
-        }
+        // }else{
+        // 	echo 0;	
+        // }
     }
 
 	
