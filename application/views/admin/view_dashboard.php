@@ -78,7 +78,7 @@
     <div class="x_panel">
     <a href="<?php echo base_url() ?>adminweb/historypenjualan">
     <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="tile-stats" style="background:#019875;color:#F7CA18">
+        <div class="tile-stats" style=" ">
             <div class="icon">
             </div>
             <div class="count">Rp <?php echo number_format($gtot); ?></div>
@@ -89,7 +89,7 @@
     </a>
     <a href="<?php echo base_url() ?>adminweb/viewdetailitem">
     <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="tile-stats" style="background:#019875;color:#F7CA18">
+        <div class="tile-stats" style="">
             <div class="icon"><i  class="fa fa-exchange"></i>
             </div>
             <div class="count" >
@@ -105,7 +105,7 @@
     </a>
     <a href="<?php echo base_url() ?>adminweb/tutupbuku">
     <div class="animated flipInY col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <div class="tile-stats" style="background: #2C3E50;color:#fff">
+        <div class="tile-stats" >
             <div class="icon">
             <i class="fa fa-book"></i>
             </div>
@@ -122,7 +122,7 @@
     <div class="x_panel">
     <a href="#">
     <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="tile-stats" style="background:#19B5FE;color:#F7CA18">
+        <div class="tile-stats" style="">
             <div class="icon">
             </div>
             <div class="count">Rp <?php echo number_format($gtotbungkus); ?></div>
@@ -133,7 +133,7 @@
     </a>
     <a href="<?php echo base_url() ?>adminweb/detailitembungkus">
     <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="tile-stats"  style="background:#19B5FE;color:#F7CA18">
+        <div class="tile-stats"  style="">
             <div class="icon"><i class="fa fa-exchange"></i>
             </div>
             <div class="count" >
@@ -177,7 +177,7 @@
     <div class="x_panel">
     <a href="<?php echo base_url() ?>abahanbaku">
     <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="tile-stats" style="background:#36D7B7;color:#FFF">
+        <div class="tile-stats" >
             <div class="icon"><i class="fa fa-cubes"></i>
             </div>
             <div class="count">Bahan</div>
@@ -188,7 +188,7 @@
     </a>
     <a href="<?php echo base_url() ?>aitem">
     <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="tile-stats" style="background:#D35400;color:#fff">
+        <div class="tile-stats" >
             <div class="icon"><i class="fa fa-comments-o"></i>
             </div>
             <div class="count">Item</div>
@@ -200,7 +200,7 @@
     </a>
     <a href="<?php echo base_url() ?>apesanan">
     <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="tile-stats" style="background:#4183D7;color:#fff">
+        <div class="tile-stats" >
             <div class="icon"><i class="fa fa-cutlery"></i>
             </div>
             <div class="count">Pesanan</div>
@@ -212,7 +212,7 @@
     </a>
     <a href="<?php echo base_url() ?>akaryawan">
     <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="tile-stats" style="background:#EC644B;color:#fff">
+        <div class="tile-stats" >
             <div class="icon"><i class="fa fa-group"></i>
             </div>
             <div class="count">Karyawan</div>
@@ -237,7 +237,7 @@
     <a href="<?php echo base_url() ?>adminweb/historytrans">
         
     <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="tile-stats" style="background:#36D7B7;color:#fff">
+        <div class="tile-stats" >
             <div class="icon"><i class="fa fa-credit-card"></i>
             </div>
             <div class="count">History</div>
